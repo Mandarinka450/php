@@ -43,3 +43,8 @@ th{
 h4{
     text-align: center;
 }
+form{
+    padding: 20px;
+    box-shadow: 0 0 15px rgb(5, 170, 235);
+
+}

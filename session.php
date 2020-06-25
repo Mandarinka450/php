@@ -36,8 +36,8 @@
                     <tr>
                         <th><?php echo $row['id']; ?></th>
                         <th><?php echo $row['link']; ?></th>
-                        <th><a href="session.php?session=<?php echo $row['id']; ?>">Ссылочка</a></th>
-                        <th><a href="session.php?edit=<?php echo $row['id']; ?>">Редактировать</a></th>
+                        <th><a href="session<?php echo $row['id']; ?>.php">Ссылочка</a></th>
+                        <th><a href="session.php?edit=<?php echo $row['id']; ?>" >Редактировать</a></th>
                         <th><a href="session.php?delete=<?php echo $row['id']; ?>">Удалить</a></th>
                     </tr>
                         <?php endwhile; ?>
@@ -51,7 +51,23 @@
                 }
             ?>
         <h4 class="reviews__title">Создать сессию</h4>
-
+        <div class="reviews__review">
+            <form class="form" action="link.php" method="post">
+                <input type="hidden" name="id" value="<?php echo $id; ?>">
+                <input class ="form__enter" name="link" value="<?php echo $link; ?>" type="text"  placeholder="Введите название сессии">
+                <?php
+                    if ($update == true) :
+                ?>
+                   <button name="update" value="update" type="submit">update</button>
+                <?php
+                    else :
+                ?>
+                  <button name="save" value="добавить" type="submit">save</button>
+                <?php
+                    endif;
+                ?>
+            </form>
+        </div>
 
     
 
